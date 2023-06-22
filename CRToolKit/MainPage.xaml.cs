@@ -7,7 +7,11 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-	}
+        Task.Run(async () =>
+        {
+            await Task.Delay(4000);
+        }).Wait();
+    }
 
 	private void OnCounterClicked(object sender, EventArgs e)
 	{
