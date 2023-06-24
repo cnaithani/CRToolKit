@@ -41,8 +41,9 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FF0000" BaseSize="128,128"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-</MauiSplashScreen>
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FF0000" BaseSize="128,128">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</MauiSplashScreen>
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -65,5 +66,11 @@
 	    <SubType>Code</SubType>
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Views\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Views\" />
 	</ItemGroup>
 </Project>

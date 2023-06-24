@@ -20,10 +20,12 @@ public static class MauiProgram
 #endif
 
 		var app =  builder.Build();
+		/*
         Task.Run(async () =>
         {
             await Task.Delay(4000);
         }).Wait();
+		*/
 		return app;
     }
 }
