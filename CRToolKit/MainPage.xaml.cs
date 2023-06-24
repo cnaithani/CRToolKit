@@ -8,10 +8,12 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		
+        /*
         Task.Run(async () =>
         {
             await Task.Delay(2000);
         }).Wait();
+		*/
 		
     }
 
