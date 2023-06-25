@@ -59,18 +59,21 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
-	    <DependentUpon>MainPage.xaml</DependentUpon>
-	    <SubType>Code</SubType>
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Compile>
-	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Views\" />
+	  <None Remove="Resources\Images\list-2-32.svg" />
+	  <None Remove="Resources\Images\list32.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
 	</ItemGroup>
+ <!-- Workaround for https://github.com/dotnet/maui/issues/7272 -->
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\list32.svg" />
+	</ItemGroup>
+  <Target Name="_SetPublishFolderTypeNoneOnDocFileItems" BeforeTargets="_ComputePublishLocation">
+    <ItemGroup>
+      <ResolvedFileToPublish Update="@(ResolvedFileToPublish)" Condition="'%(ResolvedFileToPublish.Extension)' == '.xml' And '%(ResolvedFileToPublish.PublishFolderType)' == ''" PublishFolderType="None" />
+    </ItemGroup>
+  </Target>
 </Project>

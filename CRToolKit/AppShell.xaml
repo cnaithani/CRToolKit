@@ -4,22 +4,20 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CRToolKit"
+    xmlns:views="clr-namespace:CRToolKit.Views"
     >
     
-    <!--<ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />-->
     
 
     <TabBar> 
-        <Tab Icon="home32.png"     Title="Home" >
+        <Tab Icon="home32.png" Title="Home" >
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
         </Tab>
 
 
-        <Tab Icon="dotnet_bot.png"  Title="Garden">
-            <ShellContent  ContentTemplate="{DataTemplate local:MainPage}"/>
+        <Tab Icon="list32.png"  Title="List">
+            <ShellContent  Title="List 1" ContentTemplate="{DataTemplate views:List1}"/>
+            <ShellContent  Title="List 2" ContentTemplate="{DataTemplate local:MainPage}"/>
         </Tab>
     </TabBar>
 
