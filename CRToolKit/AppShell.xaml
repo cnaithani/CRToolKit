@@ -13,11 +13,17 @@
         <Tab Icon="home32.png" Title="Home" >
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
         </Tab>
-
-
         <Tab Icon="list32.png"  Title="List">
             <ShellContent  Title="List 1" ContentTemplate="{DataTemplate views:List1}"/>
             <ShellContent  Title="List 2" ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab Icon="reports32.png"  Title="Charts">
+            <ShellContent  Title="Line Chart" ContentTemplate="{DataTemplate views:List1}"/>
+            <ShellContent  Title="Pie Chart" ContentTemplate="{DataTemplate views:List1}"/>
+            <ShellContent  Title="Pie Chart" ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab Icon="notification32.png"  Title="Notifications">
+            <ShellContent  Title="Line Chart" ContentTemplate="{DataTemplate views:List1}"/>
         </Tab>
     </TabBar>
 
