@@ -14,7 +14,7 @@ namespace CRToolKit
         public async Task<string> GetDBFile()
         {
             string dbName = "AppSQLite.db3";
-            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string dbPath = Path.Combine(path, dbName);
             // Check if your DB has already been extracted.
             if (!File.Exists(dbPath))
@@ -32,9 +32,12 @@ namespace CRToolKit
                     }
                 }
             }
+            
+
             return dbPath;
         }
 
+        //This is a test function, will be used to copy user data file
         public string CopyDBFile()
         {
             string dbName = "AppSQLite.db3";

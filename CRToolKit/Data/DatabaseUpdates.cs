@@ -1,4 +1,6 @@
 ﻿using System;
+using CRToolKit.Models;
+
 namespace CRToolKit.Data
 {
     public class DatabaseUpdates
@@ -6,7 +8,7 @@ namespace CRToolKit.Data
         public const int LAST_DATABASE_VERSION = 9;
         public async Task UpdateDatabase()
         {
-            int currentDbVersion = 0;
+            int currentDbVersion = 2;
             currentDbVersion = await GetDatabaseVersion();
 
             if (currentDbVersion < LAST_DATABASE_VERSION)
@@ -23,6 +25,7 @@ namespace CRToolKit.Data
                         break;
                 }
             }
+            UpgradeFrom1To2();
         }
         private async Task<int> GetDatabaseVersion()
         {
@@ -32,9 +35,9 @@ namespace CRToolKit.Data
         {
             return await App.Database.database.ExecuteAsync("PRAGMA user_version =" + version.ToString());
         }
-        internal void UpgradeFrom1To2()
+        internal async void UpgradeFrom1To2()
         {
-            //await App.Database.database.CreateTableAsync<ActivityDetail>();
+            await App.Database.database.CreateTableAsync<Product>();
         }
     }
 }

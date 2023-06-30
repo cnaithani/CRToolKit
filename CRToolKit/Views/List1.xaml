@@ -3,10 +3,84 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CRToolKit.Views.List1"
              Title="List1">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Content>
+
+            <ListView Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="3"
+                      ItemsSource="{Binding ProductList}"
+                      SeparatorVisibility="None"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Margin="5,5,5,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                                    <Frame VerticalOptions="Start" HorizontalOptions="FillAndExpand" CornerRadius="10" BackgroundColor="{StaticResource QuaternaryColor}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="5*"/>
+                                                <ColumnDefinition Width="1*"/>
+
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" Text="{Binding DisplayProductDescription}" HorizontalOptions="StartAndExpand"  HorizontalTextAlignment="Center" Style="{StaticResource DescriptionLabelStyleOnColor}"></Label>
+                                            <ImageButton Grid.Column="1" VerticalOptions="Start" HorizontalOptions="EndAndExpand" 
+                                                             Source="Deails32.png"
+                                                         Command="{Binding Path=BindingContext.OnProductDetailNavigation, Source={x:Reference Name=_activityList}}"
+                                                         CommandParameter="{Binding ProductId}" BackgroundColor="{StaticResource QuaternaryColor}">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal">
+                                                            <VisualState.Setters>
+                                                                <Setter Property="Scale"
+                                                            Value="1" />
+                                                            </VisualState.Setters>
+                                                        </VisualState>
+
+                                                        <VisualState x:Name="Pressed">
+                                                            <VisualState.Setters>
+                                                                <Setter Property="Scale"
+                                                            Value="0.8" />
+                                                            </VisualState.Setters>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                            </ImageButton>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Margin="5,-20,5,10" Spacing="-7" Orientation="Horizontal" BackgroundColor="{StaticResource PrimaryColor}">
+
+                                    <Frame x:Name ="lblTags1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" CornerRadius="10" BackgroundColor="{StaticResource PrimaryColor}">
+                                        <StackLayout>
+                                            <Label  Text="Duration" HorizontalTextAlignment="Center" Style="{StaticResource SimpleLabelStyleOnColor}"></Label>
+                                            <Label  Text="{Binding DisplayProductDescription}" HorizontalTextAlignment="Center" Style="{StaticResource DescriptionLabelStyleOnColor}"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                    <!--
+                                    <Frame x:Name ="lblTags2" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PrimaryColor}">
+                                        <StackLayout>
+                                            <Label Text="Avg. Focus Level" HorizontalTextAlignment="Center" Style="{StaticResource SimpleLabelStyleOnColor}"></Label>
+                                            <Label Text="{Binding FocusFactor}" HorizontalTextAlignment="Center" Style="{StaticResource DescriptionLabelStyleOnColor}"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame x:Name ="lblTags3" VerticalOptions="Start" HorizontalOptions="FillAndExpand" CornerRadius="10" BackgroundColor="{StaticResource PrimaryColor}">
+                                        <StackLayout>
+                                            <Label Text="Time Utilization" HorizontalTextAlignment="Center" Style="{StaticResource SimpleLabelStyleOnColor}"></Label>
+                                            <Label HorizontalTextAlignment="Center" Style="{StaticResource DescriptionLabelStyleOnColor}">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{Binding EffectiveUtilization}" />
+                                                        <Span Text="%"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </StackLayout>
+                                    </Frame>
+                                    -->
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </ContentPage.Content>
 </ContentPage>

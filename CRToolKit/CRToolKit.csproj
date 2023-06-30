@@ -59,6 +59,11 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+		<PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.5" />
+		<PackageReference Include="SQLitePCLRaw.core" Version="2.1.5" />
+		<PackageReference Include="SQLiteNetExtensions.Async" Version="2.1.0" />
+		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.5" />
+		<PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.5" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Views\" />
@@ -70,11 +75,19 @@
 	  <None Remove="Data\" />
 	  <None Remove="Resources\Raw\AppSQLite.db3" />
 	  <None Remove="Interfaces\" />
+	  <None Remove="Classes\" />
+	  <None Remove="ViewModel\" />
+	  <None Remove="DTO\" />
+	  <None Remove="Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
 	  <Folder Include="Data\" />
 	  <Folder Include="Interfaces\" />
+	  <Folder Include="Classes\" />
+	  <Folder Include="ViewModel\" />
+	  <Folder Include="DTO\" />
+	  <Folder Include="Models\" />
 	</ItemGroup>
  <!-- Workaround for https://github.com/dotnet/maui/issues/7272 -->
 	<ItemGroup>
