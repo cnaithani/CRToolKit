@@ -32,7 +32,9 @@ namespace CRToolKit.Views
             ProductList = prodList.Select(x => new ProductListDTO
             {
                 ProductId = x.Id,
-                DisplayProductDescription = x.Description
+                Description = x.Description,
+                Dimentions = string.Concat( x.Height.ToString() , " X " , x.Weidth.ToString(), " X " , x.Breadth.ToString())
+
             }).ToList();
             OnPropertyChanged("ProductList");
         }

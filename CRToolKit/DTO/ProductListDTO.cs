@@ -5,7 +5,10 @@ namespace CRToolKit.DTO
     {
 
         public int ProductId { get; set; }
-        public string DisplayProductDescription { get; set; }
+        public string Description { get; set; }
+        public string DetailedDescription { get; set; }
+        public string Dimentions { get; set; }
+        public string Image { get; set; }
 
     }
 }
