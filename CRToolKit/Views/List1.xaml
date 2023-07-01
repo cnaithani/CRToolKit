@@ -13,8 +13,8 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Vertical">
-                                <StackLayout Margin="5,5,5,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
-                                    <Frame VerticalOptions="Start"  HorizontalOptions="FillAndExpand" CornerRadius="10" BackgroundColor="{StaticResource Tertiary}">
+                                <StackLayout Margin="5,5,5,0" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                                    <StackLayout VerticalOptions="Start"  HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource Tertiary}">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="5*"/>
@@ -22,13 +22,9 @@
                                             </Grid.ColumnDefinitions>
                                             <Label Grid.Column="0"  Text="{Binding ProductDescription}" HorizontalOptions="Start"  HorizontalTextAlignment="Start" Style="{StaticResource DescriptionLabelStyleOnColor}"></Label>
                                             <ImageButton Grid.Column="1"  VerticalOptions="Start" HorizontalOptions="End" 
-                                            Source="edit16w.png" HeightRequest="16" WidthRequest="16" BackgroundColor="Transparent"
+                                            Source="edit16w.png" BackgroundColor="Transparent"
                                                 Command="{Binding Path=BindingContext.OnProductDetailNavigation, Source={x:Reference Name=_activityList}}"
-                                                CommandParameter="{Binding ProductId}"> 
-                                            </ImageButton>
-
-
-                                                <!--
+                                                CommandParameter="{Binding ProductId}">
                                                 <VisualStateManager.VisualStateGroups>
                                                     <VisualStateGroup x:Name="CommonStates">
                                                         <VisualState x:Name="Normal">
@@ -46,14 +42,13 @@
                                                         </VisualState>
                                                     </VisualStateGroup>
                                                 </VisualStateManager.VisualStateGroups>
-                                                -->
-                                            
+                                            </ImageButton>
                                         </Grid>
-                                    </Frame>
+                                    </StackLayout>
                                 </StackLayout>
-                                <StackLayout Margin="5,-24,5,10" Spacing="-7" Orientation="Horizontal" BackgroundColor="{StaticResource PrimaryColor}">
+                                <StackLayout Margin="5,0,5,10" Spacing="-7" Orientation="Horizontal" BackgroundColor="{StaticResource White}">
 
-                                    <Frame x:Name ="lblTags1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" CornerRadius="10" BackgroundColor="{StaticResource PrimaryColor}">
+                                    <Frame x:Name ="lblTags1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource White}">
                                         <StackLayout>
                                             <Label  Text="Duration" HorizontalTextAlignment="Center" Style="{StaticResource SimpleLabelStyleOnColor}"></Label>
                                             <Label  Text="{Binding DisplayProductDescription}" HorizontalTextAlignment="Center" Style="{StaticResource DescriptionLabelStyleOnColor}"></Label>
