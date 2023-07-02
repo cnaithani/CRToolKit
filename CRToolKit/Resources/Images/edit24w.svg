@@ -2,12 +2,12 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="16"
-   height="16"
-   viewBox="0 0 4.23328 4.23328"
+   width="24"
+   height="24"
+   viewBox="0 0 6.34992 6.34992"
    version="1.1"
    id="svg5"
-   sodipodi:docname="editwhite16.svg"
+   sodipodi:docname="edit16w.svg"
    inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,7 +24,7 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="9.8333333"
-     inkscape:cx="12.305085"
+     inkscape:cx="12.40678"
      inkscape:cy="12.813559"
      inkscape:window-width="1470"
      inkscape:window-height="804"
@@ -52,7 +52,7 @@
   <g
      id="layer1"
      style="opacity:1;fill:#ffffff"
-     transform="matrix(0.61375883,0,0,0.64154063,0.03608475,0.15642887)">
+     transform="matrix(0.93425682,0,0,0.97439577,0.00614208,0.18606535)">
     <path
        style="display:none;fill:#ffffff;fill-rule:nonzero;stroke:#000000;stroke-width:0.26458;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 2.91038;stroke-dashoffset:0;stroke-opacity:1"
        d="M 3.0785646,8.0914831 V 3.2086907 c 0,0 -1.9193756,1.7117075 -1.7221888,1.1063751 C 2.3300845,1.3259341 4.6307963,0.24183139 4.3069167,0.56125893 3.9322179,0.24353466 5.9916784,1.1145714 7.4366812,4.3533115 7.7141662,4.9752493 5.5365236,3.1193705 5.5365236,3.1193705 l 0.062828,4.9211184 z"

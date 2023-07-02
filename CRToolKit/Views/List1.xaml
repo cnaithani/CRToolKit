@@ -14,15 +14,15 @@
                         <ViewCell>
                             <StackLayout Orientation="Vertical">
                                 <StackLayout Margin="5,5,5,0" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
-                                    <StackLayout VerticalOptions="Start"  HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource Tertiary}">
+                                    <StackLayout VerticalOptions="Start"  HorizontalOptions="FillAndExpand" BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Tertiary}}">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="5*"/>
                                                 <ColumnDefinition Width="1*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Label Grid.Column="0"  Text="{Binding ProductDescription}" HorizontalOptions="Start"  HorizontalTextAlignment="Start" Style="{StaticResource DescriptionLabelStyleOnColor}"></Label>
-                                            <ImageButton Grid.Column="1"  VerticalOptions="Start" HorizontalOptions="End" 
-                                            Source="edit16w.png" BackgroundColor="Transparent"
+                                            <Label Grid.Column="0" Margin="5,0,0,0"  Text="{Binding Description}" HorizontalOptions="Start" VerticalOptions="Center"  HorizontalTextAlignment="Center" Style="{StaticResource lblSimpleListHeader}"></Label>
+                                            <ImageButton Grid.Column="1"  VerticalOptions="Start" HorizontalOptions="End" HeightRequest="50" WidthRequest="50"
+                                            Source="{AppThemeBinding Light=edit24b.png, Dark=edit24w.png}" BackgroundColor="Transparent" Aspect="Center"
                                                 Command="{Binding Path=BindingContext.OnProductDetailNavigation, Source={x:Reference Name=_activityList}}"
                                                 CommandParameter="{Binding ProductId}">
                                                 <VisualStateManager.VisualStateGroups>
@@ -30,10 +30,9 @@
                                                         <VisualState x:Name="Normal">
                                                             <VisualState.Setters>
                                                                 <Setter Property="Scale"
-                                                            Value="1" />
+                                                            Value="1.0" />
                                                             </VisualState.Setters>
                                                         </VisualState>
-
                                                         <VisualState x:Name="Pressed">
                                                             <VisualState.Setters>
                                                                 <Setter Property="Scale"
@@ -48,12 +47,7 @@
                                 </StackLayout>
                                 <StackLayout Margin="5,0,5,10" Spacing="-7" Orientation="Horizontal" BackgroundColor="{StaticResource White}">
 
-                                    <Frame x:Name ="lblTags1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource White}">
-                                        <StackLayout>
-                                            <Label  Text="Duration" HorizontalTextAlignment="Center" Style="{StaticResource SimpleLabelStyleOnColor}"></Label>
-                                            <Label  Text="{Binding DisplayProductDescription}" HorizontalTextAlignment="Center" Style="{StaticResource DescriptionLabelStyleOnColor}"></Label>
-                                        </StackLayout>
-                                    </Frame>
+                                    <Label Text="{Binding Description}"></Label>
                                     <!--
                                     <Frame x:Name ="lblTags2" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PrimaryColor}">
                                         <StackLayout>
