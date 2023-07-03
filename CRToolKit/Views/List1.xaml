@@ -2,78 +2,93 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CRToolKit.Views.List1"
-             Title="List1">
-    <ContentPage.Content>
-
-            <ListView Grid.ColumnSpan="3"
-                      ItemsSource="{Binding ProductList}"
-                      SeparatorVisibility="None"
-                      HasUnevenRows="True">
+             Title="List1">        
+            <ListView 
+                        ItemsSource="{Binding ProductList}"
+                        SeparatorVisibility="None"
+                        HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical">
-                                <StackLayout Margin="5,5,5,0" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
-                                    <StackLayout VerticalOptions="Start"  HorizontalOptions="FillAndExpand" BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Tertiary}}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="5*"/>
-                                                <ColumnDefinition Width="1*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Label Grid.Column="0" Margin="5,0,0,0"  Text="{Binding Description}" HorizontalOptions="Start" VerticalOptions="Center"  HorizontalTextAlignment="Center" Style="{StaticResource lblSimpleListHeader}"></Label>
-                                            <ImageButton Grid.Column="1"  VerticalOptions="Start" HorizontalOptions="End" HeightRequest="50" WidthRequest="50"
-                                            Source="{AppThemeBinding Light=edit24b.png, Dark=edit24w.png}" BackgroundColor="Transparent" Aspect="Center"
-                                                Command="{Binding Path=BindingContext.OnProductDetailNavigation, Source={x:Reference Name=_activityList}}"
-                                                CommandParameter="{Binding ProductId}">
-                                                <VisualStateManager.VisualStateGroups>
-                                                    <VisualStateGroup x:Name="CommonStates">
-                                                        <VisualState x:Name="Normal">
-                                                            <VisualState.Setters>
-                                                                <Setter Property="Scale"
-                                                            Value="1.0" />
-                                                            </VisualState.Setters>
-                                                        </VisualState>
-                                                        <VisualState x:Name="Pressed">
-                                                            <VisualState.Setters>
-                                                                <Setter Property="Scale"
-                                                            Value="0.8" />
-                                                            </VisualState.Setters>
-                                                        </VisualState>
-                                                    </VisualStateGroup>
-                                                </VisualStateManager.VisualStateGroups>
-                                            </ImageButton>
-                                        </Grid>
+                            
+                            <Border StrokeThickness="4" StrokeShape="RoundRectangle 10,10,0,0" Margin="5,5,5,5">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Margin="5,5,5,0" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                        <StackLayout VerticalOptions="Start"  HorizontalOptions="FillAndExpand" BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Tertiary}}">
+                                            <Grid HorizontalOptions="FillAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="5*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0" Margin="5,0,0,0"  Text="{Binding Code}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"  HorizontalTextAlignment="Center" Style="{StaticResource lblHeader2}"></Label>
+                                                <ImageButton Grid.Column="1"  VerticalOptions="Start" HorizontalOptions="End" HeightRequest="50" WidthRequest="50"
+                                                Source="{AppThemeBinding Light=edit24b.png, Dark=edit24w.png}" BackgroundColor="Transparent" Aspect="Center"
+                                                    Command="{Binding Path=BindingContext.OnProductDetailNavigation, Source={x:Reference Name=_activityList}}"
+                                                    CommandParameter="{Binding ProductId}">
+                                                    <VisualStateManager.VisualStateGroups>
+                                                        <VisualStateGroup x:Name="CommonStates">
+                                                            <VisualState x:Name="Normal">
+                                                                <VisualState.Setters>
+                                                                    <Setter Property="Scale"
+                                                                Value="1.0" />
+                                                                </VisualState.Setters>
+                                                            </VisualState>
+                                                            <VisualState x:Name="Pressed">
+                                                                <VisualState.Setters>
+                                                                    <Setter Property="Scale"
+                                                                Value="0.8" />
+                                                                </VisualState.Setters>
+                                                            </VisualState>
+                                                        </VisualStateGroup>
+                                                    </VisualStateManager.VisualStateGroups>
+                                                </ImageButton>
+                                            </Grid>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="2" BackgroundColor="Gray" Margin="5,0,5,5"> </BoxView>
+                                    <StackLayout Margin="5,0,5,10" Spacing="5" Orientation="Vertical" BackgroundColor="{StaticResource White}">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Description: " Style="{StaticResource lblHeader3}"></Label>
+                                            <Label Text="{Binding Description}"></Label>
+                                        </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                            <Label Text="Dimentions: " Style="{StaticResource lblHeader3}"></Label>
+                                            <Label Text="{Binding Dimentions}"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="About: " Style="{StaticResource lblHeader3}"></Label>
+                                            <Label Text="{Binding DetailedDescription}"></Label>
+                                        </StackLayout>                                     
+                                    
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout Margin="5,0,5,10" Spacing="-7" Orientation="Horizontal" BackgroundColor="{StaticResource White}">
-
-                                    <Label Text="{Binding Description}"></Label>
-                                    <!--
-                                    <Frame x:Name ="lblTags2" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PrimaryColor}">
-                                        <StackLayout>
-                                            <Label Text="Avg. Focus Level" HorizontalTextAlignment="Center" Style="{StaticResource SimpleLabelStyleOnColor}"></Label>
-                                            <Label Text="{Binding FocusFactor}" HorizontalTextAlignment="Center" Style="{StaticResource DescriptionLabelStyleOnColor}"></Label>
-                                        </StackLayout>
-                                    </Frame>
-                                    <Frame x:Name ="lblTags3" VerticalOptions="Start" HorizontalOptions="FillAndExpand" CornerRadius="10" BackgroundColor="{StaticResource PrimaryColor}">
-                                        <StackLayout>
-                                            <Label Text="Time Utilization" HorizontalTextAlignment="Center" Style="{StaticResource SimpleLabelStyleOnColor}"></Label>
-                                            <Label HorizontalTextAlignment="Center" Style="{StaticResource DescriptionLabelStyleOnColor}">
-                                                <Label.FormattedText>
-                                                    <FormattedString>
-                                                        <Span Text="{Binding EffectiveUtilization}" />
-                                                        <Span Text="%"/>
-                                                    </FormattedString>
-                                                </Label.FormattedText>
-                                            </Label>
-                                        </StackLayout>
-                                    </Frame>
-                                    -->
-                                </StackLayout>
-                            </StackLayout>
+                            </Border>
+                            
+ 
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-    </ContentPage.Content>
+        
+<!--
+<Border StrokeThickness="4"
+        StrokeShape="RoundRectangle 40,0,0,40"
+        Background="#2B0B98"
+        Padding="16,8"
+        HorizontalOptions="Center">
+    <Border.Stroke>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="Orange"
+                          Offset="0.1" />
+            <GradientStop Color="Brown"
+                          Offset="1.0" />
+        </LinearGradientBrush>
+    </Border.Stroke>
+    <Label Text=".NET MAUI"
+           TextColor="White"
+           FontSize="18"
+           FontAttributes="Bold" />
+</Border>
+-->
+
 </ContentPage>

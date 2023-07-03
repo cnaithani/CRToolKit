@@ -9,7 +9,9 @@ public partial class App : Application
     static bool isDatabaseInitialized = false;
     public App()
 	{
-		InitializeComponent();		
+		InitializeComponent();
+
+        Application.Current.UserAppTheme = AppTheme.Dark;
 
         if (database == null)
         {

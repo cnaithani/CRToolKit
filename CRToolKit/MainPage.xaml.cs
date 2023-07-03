@@ -28,6 +28,19 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
+
+    void Theme_Toggled(System.Object sender, Microsoft.Maui.Controls.ToggledEventArgs e)
+    {
+		if (Application.Current.UserAppTheme == AppTheme.Dark)
+		{
+			Application.Current.UserAppTheme = AppTheme.Light;
+
+        }
+		else
+		{
+            Application.Current.UserAppTheme = AppTheme.Dark;
+        }
+    }
 }
 
 
