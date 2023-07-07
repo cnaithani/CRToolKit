@@ -5,10 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CRToolKit"
     xmlns:views="clr-namespace:CRToolKit.Views"
+    BackgroundColor="{AppThemeBinding Light={StaticResource AppColorL}, Dark={StaticResource AppColorD}}"
     >
-    
-    
-
+   
     <TabBar> 
         <Tab Icon="home32.png" Title="Home" >
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>

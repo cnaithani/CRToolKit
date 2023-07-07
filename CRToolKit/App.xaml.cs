@@ -9,7 +9,15 @@ public partial class App : Application
     static bool isDatabaseInitialized = false;
     public App()
 	{
-		InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch(Exception e)
+        {
+            var str = e.Message;
+        }
+		
 
         Application.Current.UserAppTheme = AppTheme.Dark;
 

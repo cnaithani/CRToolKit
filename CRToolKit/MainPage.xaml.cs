@@ -17,17 +17,7 @@ public partial class MainPage : ContentPage
 		
     }
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+	
 
     void Theme_Toggled(System.Object sender, Microsoft.Maui.Controls.ToggledEventArgs e)
     {

@@ -25,7 +25,7 @@
     </Style>
 
     <Style x:Key="lblHeader2" TargetType="Label">
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource OnSurfaceL}, Dark={StaticResource OnSurfaceD}}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="FontFamily" Value="Arial" />
         <Setter Property="FontSize" Value="16" />
@@ -43,8 +43,8 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
-    <Style x:Key="lblHeader3" TargetType="Label">
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+    <Style x:Key="lblHeaderOnPrimary3" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource OnPrimaryL}, Dark={StaticResource OnPrimaryL}}"/>
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="FontFamily" Value="Arial" />
         <Setter Property="FontSize" Value="14" />
