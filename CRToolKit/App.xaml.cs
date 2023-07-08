@@ -18,8 +18,15 @@ public partial class App : Application
             var str = e.Message;
         }
 		
-
-        Application.Current.UserAppTheme = AppTheme.Dark;
+        if(Preferences.Get("APPTHEME","Light")== "Dark")
+        {
+            Application.Current.UserAppTheme = AppTheme.Dark;
+        }
+        else
+        {
+            Application.Current.UserAppTheme = AppTheme.Light;
+        }
+        
 
         if (database == null)
         {

@@ -24,11 +24,13 @@ public partial class MainPage : ContentPage
 		if (Application.Current.UserAppTheme == AppTheme.Dark)
 		{
 			Application.Current.UserAppTheme = AppTheme.Light;
+            Preferences.Set("APPTHEME", "Light");
 
         }
 		else
 		{
             Application.Current.UserAppTheme = AppTheme.Dark;
+            Preferences.Set("APPTHEME", "Dark");
         }
     }
 }

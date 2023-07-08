@@ -2,27 +2,27 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CRToolKit.Views.List1"
-             Title="Simple List">        
+             Title="Simple List"
+             BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundL}, Dark={StaticResource BackgroundD}}">        
             <ListView   BackgroundColor="Transparent"
                         ItemsSource="{Binding ProductList}"
                         SeparatorVisibility="None"
                         HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            
-                            <Border StrokeThickness="4" StrokeShape="RoundRectangle 10,10,0,0" Margin="5,5,5,5">
+                        <ViewCell>                           
+                            <Border StrokeThickness="4" StrokeShape="RoundRectangle 10,10,0,0" Margin="5,5,5,5" BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceL}, Dark={StaticResource SurfaceD}}">
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
                                     <StackLayout Margin="5,5,5,0" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                        <StackLayout VerticalOptions="Start"  HorizontalOptions="FillAndExpand" BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceL}, Dark={StaticResource SurfaceD}}">
+                                        <StackLayout VerticalOptions="Start"  HorizontalOptions="FillAndExpand" BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryL}, Dark={StaticResource PrimaryD}}">
                                             <Grid HorizontalOptions="FillAndExpand">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="5*"/>
                                                     <ColumnDefinition Width="1*"/>
                                                 </Grid.ColumnDefinitions>
-                                                <Label Grid.Column="0" Margin="5,0,0,0"  Text="{Binding Code}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"  HorizontalTextAlignment="Center" Style="{StaticResource lblHeader2}"></Label>
+                                                <Label Grid.Column="0" Margin="5,0,0,0"  Text="{Binding Code}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"  HorizontalTextAlignment="Center" Style="{StaticResource lblHeader2OnPrimary}"></Label>
                                                 <ImageButton Grid.Column="1"  VerticalOptions="Start" HorizontalOptions="End" HeightRequest="50" WidthRequest="50"
-                                                Source="{AppThemeBinding Light=edit24b.png, Dark=edit24w.png}" BackgroundColor="Transparent" Aspect="Center"
+                                                Source="{AppThemeBinding Light=edit24w.png, Dark=edit24w.png}" BackgroundColor="Transparent" Aspect="Center"
                                                     Command="{Binding Path=BindingContext.OnProductDetailNavigation, Source={x:Reference Name=_activityList}}"
                                                     CommandParameter="{Binding ProductId}">
                                                     <VisualStateManager.VisualStateGroups>
@@ -45,18 +45,18 @@
                                             </Grid>
                                         </StackLayout>
                                     </StackLayout>
-                                    <BoxView HeightRequest="2" BackgroundColor="Gray" Margin="5,0,5,5"> </BoxView>
+                                    <BoxView HeightRequest="2" Margin="5,1,5,5" Style="{StaticResource boxViewBorder}"> </BoxView>
                                     <StackLayout Margin="5,0,5,10" Spacing="5" Orientation="Vertical" BackgroundColor="{AppThemeBinding Light={StaticResource OnPrimaryL}, Dark={StaticResource OnPrimaryD}}">
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="Description: " Style="{StaticResource lblHeaderOnPrimary3}"></Label>
+                                            <Label Text="Description: " Style="{StaticResource lblHeader3OnSurface}"></Label>
                                             <Label Text="{Binding Description}"></Label>
                                         </StackLayout>
                                             <StackLayout Orientation="Horizontal">
-                                            <Label Text="Dimentions: " Style="{StaticResource lblHeaderOnPrimary3}"></Label>
+                                            <Label Text="Dimentions: " Style="{StaticResource lblHeader3OnSurface}"></Label>
                                             <Label Text="{Binding Dimentions}"></Label>
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="About: " Style="{StaticResource lblHeaderOnPrimary3}"></Label>
+                                            <Label Text="About: " Style="{StaticResource lblHeader3OnSurface}"></Label>
                                             <Label Text="{Binding DetailedDescription}"></Label>
                                         </StackLayout>                                     
                                     
