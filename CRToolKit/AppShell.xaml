@@ -8,8 +8,8 @@
     BackgroundColor="{AppThemeBinding Light={StaticResource AppColorL}, Dark={StaticResource AppColorD}}"
     >
    
-    <TabBar> 
-        <Tab Icon="home32.png" Title="Home" >
+    <TabBar Route="Main"> 
+        <Tab Route="Home" Icon="home32.png" Title="Home" >
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
         </Tab>
         <Tab Icon="list32.png"  Title="List">
@@ -25,7 +25,7 @@
             <ShellContent  Title="Line Chart" ContentTemplate="{DataTemplate views:List1}"/>
         </Tab>
         <Tab Icon="setting32.png"  Title="Settings">
-            <ShellContent  Title="Settings" ContentTemplate="{DataTemplate views:List1}"/>
+            <ShellContent  Title="Settings" ContentTemplate="{DataTemplate views:AppSettings}"/>
         </Tab>
     </TabBar>
 

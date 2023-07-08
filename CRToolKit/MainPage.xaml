@@ -3,15 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CRToolKit.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            VerticalOptions="Center">
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Theme: "></Label>
-                <Switch Toggled="Theme_Toggled"></Switch>
-            </StackLayout>
-        </VerticalStackLayout>
-    </ScrollView>
 
 </ContentPage>
 

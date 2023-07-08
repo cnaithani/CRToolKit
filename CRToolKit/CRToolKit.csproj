@@ -79,6 +79,7 @@
 	  <None Remove="ViewModel\" />
 	  <None Remove="DTO\" />
 	  <None Remove="Models\" />
+	  <None Remove="Global\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
@@ -88,6 +89,7 @@
 	  <Folder Include="ViewModel\" />
 	  <Folder Include="DTO\" />
 	  <Folder Include="Models\" />
+	  <Folder Include="Global\" />
 	</ItemGroup>
  <!-- Workaround for https://github.com/dotnet/maui/issues/7272 -->
 	<ItemGroup>

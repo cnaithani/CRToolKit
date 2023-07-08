@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace CRToolKit.Views
+namespace CRToolKit.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

@@ -2,6 +2,7 @@
 using CRToolKit.DTO;
 using CRToolKit.Models;
 using System.Linq;
+using CRToolKit.ViewModel;
 
 namespace CRToolKit.Views
 {
