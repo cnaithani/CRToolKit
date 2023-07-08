@@ -24,6 +24,9 @@
         <Tab Icon="notification32.png"  Title="Notifications">
             <ShellContent  Title="Line Chart" ContentTemplate="{DataTemplate views:List1}"/>
         </Tab>
+        <Tab Icon="setting32.png"  Title="Settings">
+            <ShellContent  Title="Settings" ContentTemplate="{DataTemplate views:List1}"/>
+        </Tab>
     </TabBar>
 
 </Shell>
