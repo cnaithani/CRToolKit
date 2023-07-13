@@ -1,5 +1,6 @@
 ﻿using CRToolKit.Interfaces;
 using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace CRToolKit;
 
@@ -19,8 +20,12 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-        builder = RegisterAppServices(builder);
 
+        builder.ConfigureSyncfusionCore();
+        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjU2OTA4OEAzMjMyMmUzMDJlMzBIcVQrbGkvMkpjWUQ0L0srdjB6QU1nTnBEblllWU5zRjBEMk5UQ2dUMlhjPQ==");
+
+
+        builder = RegisterAppServices(builder);
         var app =  builder.Build();
 		/*
         Task.Run(async () =>

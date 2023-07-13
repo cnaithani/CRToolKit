@@ -2,10 +2,10 @@
 
 namespace CRToolKit.Views;
 
-public partial class List1 : ContentPage
+public partial class SimpleList : ContentPage
 {
 	public List1VM currentVM;
-	public List1()
+	public SimpleList()
 	{
         InitializeComponent();       
     }
