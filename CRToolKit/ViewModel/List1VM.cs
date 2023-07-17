@@ -35,7 +35,7 @@ namespace CRToolKit.Views
                 ProductId = x.Id,
                 Code = x.Code,
                 Description = x.Description,
-                Dimentions = string.Concat( x.Height.ToString() , " X " , x.Weidth.ToString(), " X " , x.Breadth.ToString()),
+                Dimentions = string.Concat( x.Height.ToString() , " X " , x.Weidth.ToString(), " X " , x.Length.ToString()),
                 DetailedDescription = x.DetailDescription
 
             }).ToList();

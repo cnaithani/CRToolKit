@@ -81,6 +81,17 @@
 	  <None Remove="DTO\" />
 	  <None Remove="Models\" />
 	  <None Remove="Global\" />
+	  <None Remove="Modules\" />
+	  <None Remove="Modules\GridViewList\" />
+	  <None Remove="Modules\GridViewList\ViewModels\" />
+	  <None Remove="Modules\GridViewList\Views\" />
+	  <None Remove="Modules\GridViewList\DTO\" />
+	  <None Remove="Modules\GridViewList\Helper\" />
+	  <None Remove="Resources\Raw\AppSQLite.db3-wal" />
+	  <None Remove="Resources\Raw\AppSQLite.db3-shm" />
+	  <None Remove="Modules\AddProduct\" />
+	  <None Remove="Modules\AddProduct\Views\" />
+	  <None Remove="Modules\AddProduct\ViewModels\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
@@ -91,6 +102,15 @@
 	  <Folder Include="DTO\" />
 	  <Folder Include="Models\" />
 	  <Folder Include="Global\" />
+	  <Folder Include="Modules\" />
+	  <Folder Include="Modules\GridViewList\" />
+	  <Folder Include="Modules\GridViewList\ViewModels\" />
+	  <Folder Include="Modules\GridViewList\Views\" />
+	  <Folder Include="Modules\GridViewList\DTO\" />
+	  <Folder Include="Modules\GridViewList\Helper\" />
+	  <Folder Include="Modules\AddProduct\" />
+	  <Folder Include="Modules\AddProduct\Views\" />
+	  <Folder Include="Modules\AddProduct\ViewModels\" />
 	</ItemGroup>
  <!-- Workaround for https://github.com/dotnet/maui/issues/7272 -->
 	<ItemGroup>
@@ -99,10 +119,18 @@
 	  <BundleResource Include="Resources\Images\reports32.svg" />
 	  <BundleResource Include="Resources\Images\home32.svg" />
 	  <BundleResource Include="Resources\Raw\AppSQLite.db3" />
+	  <BundleResource Include="Resources\Raw\AppSQLite.db3-wal" />
+	  <BundleResource Include="Resources\Raw\AppSQLite.db3-shm" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiAsset Update="Resources\Raw\AppSQLite.db3">
 	    <LogicalName>AppSQLite.db3</LogicalName>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\AppSQLite.db3-wal">
+	    <LogicalName>AppSQLite.db3-wal</LogicalName>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\AppSQLite.db3-shm">
+	    <LogicalName>AppSQLite.db3-shm</LogicalName>
 	  </MauiAsset>
 	</ItemGroup>
   <Target Name="_SetPublishFolderTypeNoneOnDocFileItems" BeforeTargets="_ComputePublishLocation">
