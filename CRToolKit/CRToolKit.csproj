@@ -50,6 +50,8 @@
 		<MauiImage Include="Resources\Images\*jpg" />
 
 		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+		<MauiImage Update="Resources\Images\add64.svg" BaseSize="64,64" />
+
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
@@ -87,8 +89,6 @@
 	  <None Remove="Modules\GridViewList\Views\" />
 	  <None Remove="Modules\GridViewList\DTO\" />
 	  <None Remove="Modules\GridViewList\Helper\" />
-	  <None Remove="Resources\Raw\AppSQLite.db3-wal" />
-	  <None Remove="Resources\Raw\AppSQLite.db3-shm" />
 	  <None Remove="Modules\AddProduct\" />
 	  <None Remove="Modules\AddProduct\Views\" />
 	  <None Remove="Modules\AddProduct\ViewModels\" />
@@ -119,18 +119,10 @@
 	  <BundleResource Include="Resources\Images\reports32.svg" />
 	  <BundleResource Include="Resources\Images\home32.svg" />
 	  <BundleResource Include="Resources\Raw\AppSQLite.db3" />
-	  <BundleResource Include="Resources\Raw\AppSQLite.db3-wal" />
-	  <BundleResource Include="Resources\Raw\AppSQLite.db3-shm" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiAsset Update="Resources\Raw\AppSQLite.db3">
 	    <LogicalName>AppSQLite.db3</LogicalName>
-	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\AppSQLite.db3-wal">
-	    <LogicalName>AppSQLite.db3-wal</LogicalName>
-	  </MauiAsset>
-	  <MauiAsset Update="Resources\Raw\AppSQLite.db3-shm">
-	    <LogicalName>AppSQLite.db3-shm</LogicalName>
 	  </MauiAsset>
 	</ItemGroup>
   <Target Name="_SetPublishFolderTypeNoneOnDocFileItems" BeforeTargets="_ComputePublishLocation">

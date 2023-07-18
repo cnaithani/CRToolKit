@@ -14,6 +14,7 @@ namespace CRToolKit.Views
         }
         public List<ProductListDTO> ProductList { get; set; }
         public string DisplayProductDescription { get; set; }
+        public bool ShowAdd { get; set; } = false;
 
         public Command OnProductDetailNavigation
         {
@@ -27,6 +28,7 @@ namespace CRToolKit.Views
             }
         }
 
+
         private async void PopulateProds()
         {
             var prodList = await App.Database.database.Table<Product>().ToListAsync();
@@ -39,7 +41,9 @@ namespace CRToolKit.Views
                 DetailedDescription = x.DetailDescription
 
             }).ToList();
+            ShowAdd = true;
             OnPropertyChanged("ProductList");
+            OnPropertyChanged("ShowAdd");
         }
 
     }
