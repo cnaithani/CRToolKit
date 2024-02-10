@@ -1,5 +1,6 @@
 ﻿using CRToolKit.Data;
 using CRToolKit.Interfaces;
+using System.Threading;
 
 namespace CRToolKit;
 
@@ -28,18 +29,20 @@ public partial class App : Application
         }
         
 
-        if (database == null)
-        {
-            InitiateDB().ConfigureAwait(false);
-        }
+
         Task.Run(async () =>
         {
+            if (database == null)
+            {
+               await  InitiateDB();
+            }
             await database.UpdateDatabase();
             isDatabaseInitialized = true;
         });
 
         MainPage = new AppShell();
-    }
+    } 
+
     public static  AppDatabase Database
     {
         get
@@ -55,6 +58,10 @@ public partial class App : Application
     {
         if (database == null)
         {
+            while (App.Current.Handler == null)
+            {
+                await System.Threading.Tasks.Task.Delay(500);
+            }
             var commonDeviceHandler = App.Current.Handler.MauiContext.Services.GetServices<ICommonDeviceHelper>().FirstOrDefault();
             database = new AppDatabase(await commonDeviceHandler.GetDBFile());
         }
@@ -64,5 +71,6 @@ public partial class App : Application
         base.OnStart();
         
     }
+
 }
 
